@@ -7,6 +7,11 @@ const server = http.createServer((req, res) => {
   }
 
   if (req.url === "/about") {
+    //blocking code
+    for (let i = 0; i < 10000; i++) {
+      console.log(Math.random() * i);
+    }
+
     return res.end("About Page");
   }
 
